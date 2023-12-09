@@ -1,13 +1,10 @@
-function fibonacci(num, memo = {}) {
-  if (num === 0 || num === 1) {
-    return num;
+function fibonacci(num) {
+  if (num === 0) {
+    return 0;
+  } else if (num === 1) {
+    return 1;
+  } else {
+    return fibonacci(num - 1) + fibonacci(num - 2);
   }
-
-  if (memo[num]) {
-    return memo[num];
-  }
-
-  memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
-  return memo[num];
 }
 module.exports = fibonacci;
